@@ -12,10 +12,13 @@ import {
     MenuDivider,
     useDisclosure,
     useColorModeValue,
+    useToast,
     Stack,
     useColorMode,
     Center, Icon, BreadcrumbItem, Breadcrumb, BreadcrumbLink,
 } from '@chakra-ui/react';
+import {useSafeTimeout} from "@primer/react";
+import {useNavigate} from "react-router-dom";
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import hei from "./assets/logo/HEI-logo.svg"
 const NavLink = ({ children }: { children: ReactNode }) => (
@@ -35,6 +38,15 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 export default function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const navigate = useNavigate();
+    const {safeSetTimeout, safeClearTimeout} = useSafeTimeout();
+    let timeoutId = null
+  
+    const handleOnClick = () => {
+      timeoutId = safeSetTimeout(() => navigate("/login"), 3000)
+    }
+    const toast = useToast();
+    
     return (
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -59,6 +71,16 @@ export default function Navbar() {
                                     </BreadcrumbItem>
                                 </Breadcrumb>
                             </Menu>
+                            <Button
+                  bg={'blue.400'}
+                  color={'white'}
+                  _hover={{
+                    bg: 'blue.500',
+                  }} onClick={()=> {
+                  handleOnClick();
+              }}>
+                Déconnexion
+              </Button>
                         </Stack>
                     </Flex>
                 </Flex>
