@@ -4,15 +4,16 @@ import Footer from './components/Footer';
 import Navbar from "./components/Navbar";
 import {Center, Grid, GridItem, Wrap, WrapItem} from "@chakra-ui/react";
 import {Info} from "./components/Info";
+import { Box } from '@primer/react';
 
 
 export const Landing = () => (
   <>
       <Navbar/>
-      <Wrap display={"flex"} flexDirection={"row"} >
+      <Wrap display={"flex"} flexDirection={"row"} my={'auto'}>
           <WrapItem flexWrap={"wrap"}>
                   <Banner/>
-                  <Info/>
+                    <Info/>     
           </WrapItem>
       </Wrap>
       <Footer/>

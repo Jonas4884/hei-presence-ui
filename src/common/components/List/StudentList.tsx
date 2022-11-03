@@ -232,9 +232,6 @@ const columns = [
     columnHelper.accessor("factor", {
         cell: (info) => info.getValue(),
         header: "Prénom(s)",
-        meta: {
-            isNumeric: true
-        }
     }),
     columnHelper.accessor("statut", {
         cell: (info) => info.getValue(),
