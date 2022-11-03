@@ -51,7 +51,7 @@ const columns = [
     }),
     columnHelper.accessor("statut", {
         cell: (info) => info.getValue(),
-        header: "Identifiant"
+        header: "Statut"
     })
 ];
 
