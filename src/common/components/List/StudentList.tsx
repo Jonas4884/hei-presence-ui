@@ -4,232 +4,119 @@ import { createColumnHelper } from "@tanstack/react-table";
 import { DataTable } from "./DataTable";
 import '../assets/box.css'
 
-type UnitConversion = {
-    fromUnit: string;
-    toUnit: string;
-    factor: number;
+type Student = {
+    Referant: string;
+    Nom: string;
+    prenom: string;
     statut: string;
 };
 
-const data: UnitConversion[] = [
+const data: Student[] = [
     {
-        fromUnit: "inches",
-        toUnit: "millimetres (mm)",
-        factor: 25.4,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "feet",
-        toUnit: "centimetres (cm)",
-        factor: 30.48,
+        Referant: "STD23006",
+        Nom: "RAKOTONDRABE",
+        prenom:"éric",
+        statut: "absent"
+    },
+    {
+        Referant: "STD23005",
+        Nom: "RAKOTONAHARY",
+        prenom:"Mino",
+        statut: "présente"
+    },
+    {
+        Referant: "STD23002",
+        Nom: "RAKOTONOMENJANAHARY",
+        prenom:"Alain",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23012",
+        Nom: "RABE",
+        prenom:"Jean Luc",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23026",
+        Nom: "RAKOTOFIRINGA",
+        prenom:"Naly",
+        statut: "absent"
+    },
+    {
+        Referant: "STD23023",
+        Nom: "RAKOTONAHARY",
+        prenom:"Fanatenana",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
     {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
+        Referant: "STD23001",
+        Nom: "RAKOTONAHARY",
+        prenom:"Nomena",
         statut: "present"
     },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    },
-    {
-        fromUnit: "yards",
-        toUnit: "metres (m)",
-        factor: 0.91444,
-        statut: "present"
-    }
+    
 ];
 
-const columnHelper = createColumnHelper<UnitConversion>();
+const columnHelper = createColumnHelper<Student>();
 
 const columns = [
-    columnHelper.accessor("fromUnit", {
+    columnHelper.accessor("Referant", {
         cell: (info) => info.getValue(),
         header: "Identifiant"
     }),
-    columnHelper.accessor("toUnit", {
+    columnHelper.accessor("Nom", {
         cell: (info) => info.getValue(),
         header: "Nom"
     }),
-    columnHelper.accessor("factor", {
+    columnHelper.accessor("prenom", {
         cell: (info) => info.getValue(),
         header: "Prénom(s)",
     }),

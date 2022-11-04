@@ -30,7 +30,7 @@ export const TakePhoto = () => {
             <Navbar />
             <Center>
                 <header>
-                    <h1 className="txt">Présence par reconnaissance faciale</h1>
+                    <h1 className="photo__label__tittle">Présence par reconnaissance faciale</h1>
                 </header>
             </Center>
 
