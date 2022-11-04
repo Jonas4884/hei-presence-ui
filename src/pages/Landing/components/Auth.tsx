@@ -77,7 +77,7 @@ export const Authentication = ()=> {
                   isClosable: true,
                 })
               }}>
-                Submit
+                Se connecter
               </Button>
             </Stack>
           </Stack>
